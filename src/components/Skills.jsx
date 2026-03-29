@@ -1,0 +1,116 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+
+const categories = {
+  Frontend: ['React.js', 'React Native', 'TypeScript', 'JavaScript', 'Vite', 'HTML5', 'CSS3', 'Tailwind CSS', 'Framer Motion', 'Recharts'],
+  Backend: ['Node.js', 'Express.js', 'REST APIs', 'Socket.IO', 'WebSocket'],
+  'Cloud & DB': ['MongoDB', 'Firebase Auth', 'Firestore', 'FCM', 'Firebase Functions', 'Azure', 'SQL'],
+  Languages: ['JavaScript', 'TypeScript', 'Java', 'Python', 'C'],
+  Tools: ['Git', 'GitHub', 'Postman', 'Expo', 'VS Code', 'Agile/Scrum'],
+}
+
+const proficiency = [
+  { name: 'React.js', level: 90 },
+  { name: 'Node.js / Express', level: 85 },
+  { name: 'MongoDB', level: 82 },
+  { name: 'Firebase', level: 80 },
+  { name: 'TypeScript', level: 78 },
+  { name: 'React Native', level: 75 },
+]
+
+export default function Skills() {
+  const [active, setActive] = useState('Frontend')
+
+  return (
+    <section id="skills" style={{
+      padding: '100px 32px',
+      background: 'var(--bg-2)',
+      borderTop: '1px solid var(--border)',
+      borderBottom: '1px solid var(--border)',
+    }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <span className="section-number">// 02</span>
+          <h2 className="section-title">Skills</h2>
+          <p className="section-sub">What I bring to the table</p>
+        </motion.div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56 }} className="skills-layout">
+          {/* Left: Tab + skills */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="tabs-list" style={{ marginBottom: 24, display: 'inline-flex' }}>
+              {Object.keys(categories).map(tab => (
+                <button key={tab} className={`tab-btn ${active === tab ? 'active' : ''}`} onClick={() => setActive(tab)}>
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}
+            >
+              {categories[active].map((skill, i) => (
+                <motion.span
+                  key={skill}
+                  className="skill-pill"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: i * 0.04 }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right: Proficiency bars */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+          >
+            <h3 style={{
+              fontFamily: 'var(--font-mono)', fontSize: '0.68rem',
+              color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em',
+              textTransform: 'uppercase', marginBottom: 24,
+            }}>Core Proficiency</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              {proficiency.map(({ name, level }, i) => (
+                <div key={name}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>{name}</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)' }}>{level}%</span>
+                  </div>
+                  <div className="bar-track">
+                    <motion.div
+                      className="bar-fill"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 1.2, ease: 'easeOut' }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .skills-layout { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  )
+}
