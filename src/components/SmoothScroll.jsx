@@ -28,5 +28,5 @@ export default function SmoothScroll({ children }) {
     }
   }, [])
 
-  return <>{children}</>
+  return <div style={{ position: 'relative' }}>{children}</div>
 }

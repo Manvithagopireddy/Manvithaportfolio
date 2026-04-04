@@ -27,7 +27,7 @@ export default function App() {
   }, [])
 
   return (
-    <div style={{ background: '#080808', minHeight: '100vh', color: '#F5F5F5' }}>
+    <div style={{ background: '#080808', minHeight: '100vh', color: '#F5F5F5', position: 'relative' }}>
       <AnimatePresence mode="wait">
         {showSplash ? (
           <SplashScreen key="splash" />
@@ -37,7 +37,7 @@ export default function App() {
             <SmoothScroll>
               <ScrollProgress />
               <Navbar />
-              <main>
+              <main style={{ position: 'relative' }}>
                 <Hero />
                 <TechMarquee />
                 <About />
