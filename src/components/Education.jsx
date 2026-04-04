@@ -8,12 +8,12 @@ const coursework = [
 export default function Education() {
   return (
     <section id="education" style={{
-      padding: '100px 32px',
+      padding: '100px 0',
       background: 'var(--bg-2)',
       borderTop: '1px solid var(--border)',
       borderBottom: '1px solid var(--border)',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 06</span>
           <h2 className="section-title">Education</h2>
@@ -27,7 +27,7 @@ export default function Education() {
           className="card"
           style={{ padding: '40px', marginTop: 8 }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, alignItems: 'start', marginBottom: 24 }}>
+          <div className="education-grid" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, alignItems: 'start', marginBottom: 24 }}>
             <div>
               <h3 style={{
                 fontFamily: 'var(--font-display)',
@@ -71,6 +71,13 @@ export default function Education() {
           </div>
         </motion.div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .education-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .education-grid > div:last-child { text-align: left !important; }
+          .card { padding: 32px 24px !important; }
+        }
+      `}</style>
     </section>
   )
 }

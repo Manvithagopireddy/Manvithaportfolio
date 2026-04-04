@@ -4,12 +4,12 @@ import { MapPin, Calendar } from 'lucide-react'
 export default function Experience() {
   return (
     <section id="experience" style={{
-      padding: '100px 32px',
+      padding: '100px 0',
       background: 'var(--bg-2)',
       borderTop: '1px solid var(--border)',
       borderBottom: '1px solid var(--border)',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 04</span>
           <h2 className="section-title">Experience</h2>
@@ -21,7 +21,8 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          style={{ position: 'relative', paddingLeft: 28 }}
+          style={{ position: 'relative', paddingLeft: 32 }}
+          className="experience-item"
         >
           <div className="timeline-line" />
           <div className="timeline-dot" />
@@ -78,7 +79,15 @@ export default function Experience() {
             </div>
           </div>
         </motion.div>
-      </div>
+        </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .experience-item { padding-left: 32px !important; margin-left: 0; }
+          .timeline-line { left: 4px !important; }
+          .timeline-dot { left: 0px !important; }
+          .card { padding: 24px 20px !important; }
+        }
+      `}</style>
     </section>
   )
 }

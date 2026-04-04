@@ -6,11 +6,10 @@ export default function Footer() {
   return (
     <footer style={{
       borderTop: '1px solid var(--border)',
-      padding: '28px 32px',
+      padding: '28px 0',
       background: 'var(--bg)',
     }}>
-      <div style={{
-        maxWidth: 1200, margin: '0 auto',
+      <div className="container" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16
       }}>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.08em' }}>

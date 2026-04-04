@@ -9,8 +9,8 @@ const certs = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" style={{ padding: '100px 32px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+    <section id="certifications" style={{ padding: '100px 0' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 05</span>
           <h2 className="section-title">Certifications</h2>
@@ -51,6 +51,11 @@ export default function Certifications() {
           ))}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .card { padding: 24px 20px !important; }
+        }
+      `}</style>
     </section>
   )
 }

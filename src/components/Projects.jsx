@@ -55,8 +55,8 @@ function TiltCard({ children }) {
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: '100px 32px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+    <section id="projects" style={{ padding: '100px 0' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 03</span>
           <h2 className="section-title">Projects</h2>
@@ -124,7 +124,7 @@ export default function Projects() {
                   </div>
 
                   {/* CTA */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-end' }}>
+                  <div className="project-cta">
                     <a
                       href={p.github} target="_blank" rel="noopener noreferrer"
                       className="btn-ghost"
@@ -132,12 +132,6 @@ export default function Projects() {
                     >
                       <FaGithub size={13} /> GitHub
                     </a>
-                    <motion.div
-                      whileHover={{ x: 3, y: -3 }}
-                      style={{ color: 'rgba(255,255,255,0.15)', cursor: 'pointer' }}
-                    >
-                      <ArrowUpRight size={18} />
-                    </motion.div>
                   </div>
                 </div>
               </TiltCard>
@@ -146,7 +140,19 @@ export default function Projects() {
         </div>
       </div>
 
-      <style>{`@media(max-width:768px){.card{grid-template-columns:1fr!important;}}</style>`}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .card { 
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+            padding: 32px 24px !important;
+          }
+          .project-cta { 
+            align-items: flex-start !important;
+            margin-top: 12px;
+          }
+        }
+      `}</style>
     </section>
   )
 }

@@ -23,19 +23,19 @@ export default function Skills() {
 
   return (
     <section id="skills" style={{
-      padding: '100px 32px',
+      padding: '100px 0',
       background: 'var(--bg-2)',
       borderTop: '1px solid var(--border)',
       borderBottom: '1px solid var(--border)',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 02</span>
           <h2 className="section-title">Skills</h2>
           <p className="section-sub">What I bring to the table</p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56 }} className="skills-layout">
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: 56 }} className="skills-layout">
           {/* Left: Tab + skills */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -107,8 +107,8 @@ export default function Skills() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .skills-layout { grid-template-columns: 1fr !important; }
+        @media (max-width: 900px) {
+          .skills-layout { grid-template-columns: 1fr !important; gap: 48px !important; }
         }
       `}</style>
     </section>

@@ -496,7 +496,47 @@ body::before {
   filter: grayscale(0%) contrast(1.1); /* Optional: dynamic color reveal on hover */
 }
 
-/* ── Responsive ── */
+/* ── Responsive Utilities ── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 1024px) {
+  .container { padding: 0 32px; }
+}
+
 @media (max-width: 768px) {
-  .section-title { font-size: 1.9rem; }
+  .container { padding: 0 24px; }
+  .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+  .section-sub { margin-bottom: 40px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
+  .section-title { font-size: 1.75rem; }
+}
+
+/* ── Typography Refinement ── */
+.display-heading {
+  font-size: clamp(2.8rem, 10vw, 7rem);
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* ── Grid/Flex Helpers ── */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
 }

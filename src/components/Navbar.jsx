@@ -24,10 +24,9 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div style={{
-        maxWidth: 1200, margin: '0 auto',
+      <div className="container" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        height: 64, padding: '0 8px',
+        height: 64,
       }}>
         {/* Logo */}
         <a href="#hero" style={{ textDecoration: 'none' }}>
@@ -74,10 +73,9 @@ export default function Navbar() {
               overflow: 'hidden',
               background: 'rgba(8,8,8,0.98)',
               borderTop: '1px solid rgba(255,255,255,0.08)',
-              padding: '0 32px',
             }}
           >
-            <div style={{ padding: '24px 0', display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <div className="container" style={{ padding: '24px 0', display: 'flex', flexDirection: 'column', gap: 20 }}>
               {navLinks.map(link => (
                 <a key={link.label} href={link.href}
                   className="nav-link" style={{ fontSize: '1rem' }}
@@ -94,6 +92,7 @@ export default function Navbar() {
 
       <style>{`
         @media (max-width: 768px) {
+          .navbar > .container { padding: 0 16px !important; }
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
         }

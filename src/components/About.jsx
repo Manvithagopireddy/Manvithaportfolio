@@ -41,7 +41,8 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: '100px 32px', maxWidth: 1200, margin: '0 auto' }}>
+    <section id="about" style={{ padding: '100px 0' }}>
+      <div className="container">
       <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <span className="section-number">// 01</span>
         <h2 className="section-title">About</h2>
@@ -142,6 +143,7 @@ export default function About() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </div>
+  </section>
   )
 }

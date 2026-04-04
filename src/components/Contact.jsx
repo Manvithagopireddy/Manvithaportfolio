@@ -22,8 +22,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ padding: '100px 32px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+    <section id="contact" style={{ padding: '100px 0' }}>
+      <div className="container">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-number">// 07</span>
           <h2 className="section-title">Let's Talk</h2>
@@ -131,7 +131,6 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-
       <style>{`
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
       `}</style>

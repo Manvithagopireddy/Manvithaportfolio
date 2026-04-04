@@ -27,7 +27,7 @@ export default function Hero() {
     }}>
       {/* Parallax content */}
       <motion.div style={{ y, opacity }} className="hero-inner-wrap">
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', width: '100%' }}>
+        <div className="container" style={{ width: '100%' }}>
 
           {/* Row 1: status tag */}
           <motion.div
@@ -159,11 +159,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20 }}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}
           >
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Magnetic strength={0.3}><a href="#projects" className="btn-primary">View Work <ArrowDown size={14} /></a></Magnetic>
-              <Magnetic strength={0.3}><a href="/resume.pdf" download className="btn-ghost"><Download size={14} /> Resume</a></Magnetic>
+              <Magnetic strength={0.3}><a href="#projects" className="btn-primary" style={{ padding: '12px 24px' }}>View Work <ArrowDown size={14} /></a></Magnetic>
+              <Magnetic strength={0.3}><a href="/resume.pdf" download className="btn-ghost" style={{ padding: '12px 24px' }}><Download size={14} /> Resume</a></Magnetic>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               {[
@@ -208,9 +208,29 @@ export default function Hero() {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.3; }
         }
+        @media (max-width: 992px) {
+          .hero-grid { gap: 32px !important; }
+        }
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-photo-col { display: none !important; }
+          .hero-grid { 
+            grid-template-columns: 1fr !important;
+            text-align: center;
+          }
+          .hero-photo-col { 
+            order: -1;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+          }
+          .hero-tag { justify-content: center; margin: 0 auto; }
+          .hero-inner-wrap > .container > div:first-child { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .hero-inner-wrap > .container > div:last-child {
+            justify-content: center !important;
+          }
         }
       `}</style>
     </section>
