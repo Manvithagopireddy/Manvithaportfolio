@@ -29,12 +29,13 @@ const stats = [
   { n: 3, suffix: '+', label: 'Projects Shipped' },
   { n: 1, suffix: '', label: 'Internship' },
   { n: 2, suffix: '', label: 'Azure Certifications' },
-  { n: 8.05, suffix: '', label: 'CGPA' },
+  { n: 8.11, suffix: '', label: 'CGPA' },
 ]
 
 const facts = [
   ['Location', 'Hyderabad, India'],
   ['Available', 'Immediately'],
+  ['Relocation', 'Open to Relocate'],
   ['Focus', 'Full Stack & Mobile'],
   ['Email', 'gopireddymanvitha@gmail.com'],
 ]

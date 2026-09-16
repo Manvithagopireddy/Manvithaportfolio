@@ -45,7 +45,7 @@ export default function Education() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '2rem', fontWeight: 700, color: '#fff',
                 letterSpacing: '-0.03em',
-              }}>8.05</div>
+              }}>8.11</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>CGPA</div>
             </div>
           </div>

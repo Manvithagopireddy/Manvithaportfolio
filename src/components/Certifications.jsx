@@ -5,6 +5,10 @@ const certs = [
   { name: 'Azure Data Fundamentals', code: 'DP-900', issuer: 'Microsoft', year: '2024' },
   { name: 'Cloud Computing', code: 'NPTEL', issuer: 'IIT Kharagpur', year: '2024' },
   { name: 'Full Stack Web Dev', code: 'Udemy', issuer: 'Udemy', year: '2023' },
+  { name: 'Google Data Analytics Professional Certificate', code: 'Professional', issuer: 'Google / Coursera', year: '2024' },
+  { name: 'IBM Data Fundamentals', code: 'Fundamentals', issuer: 'IBM / Coursera', year: '2024' },
+  { name: 'Databricks Fundamentals', code: 'Fundamentals', issuer: 'Databricks', year: '2024' },
+  { name: 'Full Stack Bootcamp', code: 'Bootcamp', issuer: 'Udemy', year: '2024' },
 ]
 
 export default function Certifications() {

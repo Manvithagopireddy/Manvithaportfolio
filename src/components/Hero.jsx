@@ -50,6 +50,12 @@ export default function Hero() {
               color: 'rgba(255,255,255,0.2)',
               letterSpacing: '0.1em',
             }}>Hyderabad, India</span>
+            <span style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.68rem',
+              color: 'rgba(255,255,255,0.2)',
+              letterSpacing: '0.1em',
+            }}>· Open to Relocate</span>
           </motion.div>
 
           {/* Row 2: Big editorial heading */}
