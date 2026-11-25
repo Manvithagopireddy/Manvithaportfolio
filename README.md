@@ -31,8 +31,8 @@ A modern, high-performance personal developer portfolio showcasing full-stack pr
 ## 🚀 Featured Projects
 
 ### 1. **RAGBot AI Chatbot**
-- **Tech Stack:** Python, LangChain, OpenAI, FAISS, FastAPI
-- **Description:** Retrieval-Augmented Generation chatbot that answers questions from custom documents using vector embeddings, semantic search, and an LLM backend for accurate, context-aware responses.
+- **Tech Stack:** Python, LangChain, Gemini, FAISS, FastAPI
+- **Description:** Retrieval-Augmented Generation chatbot that answers questions from custom documents using vector embeddings, semantic search, and an LLM backend for context-aware responses with retrieved evidence.
 
 ### 2. **E-Commerce Application**
 - **Tech Stack:** React.js, Node.js, MongoDB, Express, Stripe
@@ -111,3 +111,7 @@ To enable GitHub Pages:
 ---
 
 &copy; 2026 Manvitha Gopireddy. All rights reserved.
+
+## Current engineering work
+
+See the [GitHub profile](https://github.com/Manvithagopireddy) for the current curated project list. The portfolio website and its historical content may differ from the latest repository documentation.
